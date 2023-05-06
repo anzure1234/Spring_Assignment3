@@ -1,0 +1,26 @@
+<div class="row mb-3 d-flex justify-content-between">
+  <div class="col-sm-2 bg-light">
+    <form
+            class="form-inline mt-4 pb-2 border-bottom"
+            action="/action_page.php"
+    >
+      <input class="form-control w-75" type="text" placeholder="Search"/>
+      <button class="btn border" type="submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+
+    <div class="container-fluid pt-2 pb-2 border mt-4 view-content">
+      <a href="${pageContext.request.contextPath}view">
+        <i class="fas fa-table"></i>
+        View contents
+      </a>
+    </div>
+
+    <div class="container-fluid pt-2 pb-2 border border-top-0">
+      <a href="${pageContext.request.contextPath}/form">
+        <i class="fas fa-edit"></i>
+        Form content
+      </a>
+    </div>
+  </div>

@@ -1,0 +1,14 @@
+.ml-02 {
+    margin-left: -15px;
+}
+
+.mr-02 {
+    margin-right: -15px;
+}
+#login-box p {
+    padding: 8px;
+}
+.view-content,
+.form-content {
+    background-color: #dcdcdc;
+}
