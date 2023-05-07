@@ -54,6 +54,14 @@ public class ContentController {
 
 
 
+    @GetMapping("/content/add")
+    public String showAddContent(Model model) {
+        model.addAttribute("contentDetailDto", new ContentDetailDto());
+        return "content/add";
+    }
+
+
+
 
     @PostMapping("/content/add")
     public String addContent(@Valid ContentDetailDto contentDetailDto, BindingResult

@@ -13,6 +13,10 @@ public class MemberDetailDto {
     private String username;
     @NotBlank(message = "{common.error.required}")
     private String password;
+    private String firstName;
+    private String lastName;
     @NotBlank(message = "{common.error.required}")
     private String email;
+    private int phone;
+    private String description;
 }
