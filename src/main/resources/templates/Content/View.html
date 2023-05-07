@@ -38,8 +38,8 @@
 </head>
 <body class="bg-light">
 <div class="container-fluid">
-    <th:block th:insert="fragment/header"/>
-    <th:block th:insert="fragment/sidebar"/>
+    <th:block th:insert="fragment/header.html"/>
+    <th:block th:insert="fragment/sidebar.html"/>
         <div class="col-sm-10 bg-white">
             <p class="h2 mt-5 mb-5 border-bottom">View Content</p>
             <div class="container-fluid border rounded">
@@ -68,6 +68,21 @@
 
                         </tbody>
                     </table>
+                    <nav aria-label="Page navigation example" th:if="${contentPage.getTotalPages()>1}">
+                        <ul class="pagination">
+                            <li class="page-item" th:if="${contentPage.hasPrevious()}">
+                                <a class="page-link" th:href="@{'/content?page=' + ${contentPage.previousPageable().pageNumber+1}}">Previous</a></li>
+
+
+                            <li class="page-item" th:each="page : ${#numbers.sequence(1,contentPage.getTotalPages())}">
+                                <a class="page-link" th:text="${page}" th:href="@{content(page=${page})}"></a></li>
+
+
+                            <li class="page-item" th:if="${contentPage.hasNext()}">
+                                <a class="page-link" th:href="@{'/content?page=' + ${contentPage.nextPageable().pageNumber+1}}">Next</a></li>
+                        </ul>
+                    </nav>
+
 
                 </form>
             </div>

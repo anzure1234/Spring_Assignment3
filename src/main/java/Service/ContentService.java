@@ -12,7 +12,7 @@ public interface ContentService {
 
     void save(Content content);
 
-
+    List<Content> findAll();
 
     Page<Content> findAllPaging(Specification<Content> specification, Pageable pageable);
 

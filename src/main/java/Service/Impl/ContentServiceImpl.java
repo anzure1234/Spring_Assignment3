@@ -29,6 +29,11 @@ public class ContentServiceImpl implements ContentService {
         contentRepository.save(content);
     }
 
+    @Override
+    public List<Content> findAll() {
+        return (List<Content>) contentRepository.findAll();
+    }
+
 
     @Override
     public Page<Content> findAllPaging(Specification<Content> specification, Pageable pageable) {
