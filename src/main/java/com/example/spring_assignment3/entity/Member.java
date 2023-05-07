@@ -1,9 +1,8 @@
-package Entity;
+package com.example.spring_assignment3.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.ValueGenerationType;
 
 import java.util.Set;
 

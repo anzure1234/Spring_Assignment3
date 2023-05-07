@@ -1,4 +1,5 @@
-package dto;
+package com.example.spring_assignment3.dto;
+
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
@@ -6,16 +7,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ContentDetailDto {
+public class MemberDetailDto {
     private Long id;
     @NotBlank(message = "{common.error.required}")
-    private String title;
-
+    private String username;
     @NotBlank(message = "{common.error.required}")
-    private String brief;
+    private String password;
     @NotBlank(message = "{common.error.required}")
-    private String content;
-
-    private String sort;
-
+    private String email;
 }

@@ -1,12 +1,12 @@
-package Service.Impl;
+package com.example.spring_assignment3.service.impl;
 
-import Entity.Member;
-import Repository.MemberRepository;
-import Service.MemberService;
+import com.example.spring_assignment3.entity.Member;
+import com.example.spring_assignment3.repository.MemberRepository;
+import com.example.spring_assignment3.service.MemberService;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
-
+@Service
 public class MemberServiceImpl implements MemberService {
     private final MemberRepository memberRepository;
 

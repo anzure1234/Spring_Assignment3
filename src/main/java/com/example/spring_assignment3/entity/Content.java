@@ -1,4 +1,4 @@
-package Entity;
+package com.example.spring_assignment3.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,9 +1,6 @@
-package Service;
+package com.example.spring_assignment3.service;
 
-import Entity.Member;
-
-import java.util.List;
-import java.util.Optional;
+import com.example.spring_assignment3.entity.Member;
 
 public interface MemberService {
     void create(Member member);

@@ -1,6 +1,6 @@
-package Service;
+package com.example.spring_assignment3.service;
 
-import Entity.Content;
+import com.example.spring_assignment3.entity.Content;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
