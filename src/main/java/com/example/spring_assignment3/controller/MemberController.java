@@ -45,7 +45,7 @@ public class MemberController {
     }
 
     @PostMapping("/member/edit/{id}")
-    public String editMember(Model model, @PathVariable Long id, @Valid MemberDetailDto memberDetailDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String editMember(Model model, @PathVariable(name="id") Long id, @Valid MemberDetailDto memberDetailDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             return "member/edit";
         }

@@ -10,9 +10,9 @@ import lombok.Setter;
 public class MemberDetailDto {
     private Long id;
     @NotBlank(message = "{common.error.required}")
-    private String username;
-    @NotBlank(message = "{common.error.required}")
-    private String password;
+//    private String username;
+//    @NotBlank(message = "{common.error.required}")
+//    private String password;
     private String firstName;
     private String lastName;
     @NotBlank(message = "{common.error.required}")

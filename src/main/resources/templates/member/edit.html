@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Edit Profile</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css"
@@ -32,116 +31,119 @@
             integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
             crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/normalize.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/login.css" />
+
 </head>
 <body class="bg-light">
 <div class="container-fluid">
     <th:block th:insert="fragment/header.html"/>
     <th:block th:insert="fragment/sidebar.html"/>
 
-        <div class="col-sm-10 bg-white">
-            <p class="h2 mt-5 mb-5 border-bottom">Edit Profile</p>
-            <div class="container-fluid border rounded">
-                <form id="login-form" class="form" th:action="@{/member/edit/{id}(id=${memberDetailDto.id})}" method="post">
+    <div class="col-sm-10 bg-white">
+        <p class="h2 mt-5 mb-5 border-bottom">Edit Profile</p>
+        <div class="container-fluid border rounded">
+            <form method="post"
+                  th:action="${'/member/edit/'+memberDetailDto.getId()}"
+                  th:object="${memberDetailDto}">
+
+
 
                 <p class="bg-light ml-02 mr-02 border-bottom pt-2 pb-2 pl-2">
-                        Profile Form Elements
-                    </p>
+                    Profile Form Elements
+                </p>
 
-                    <div class="form-group">
-                        <input type="hidden" name="id" th:value="${memberDetailDto.id}" />
-                        <label for="first-name" class="font-weight-bold">
-                            First Name
-                        </label>
-                        <input
-                                type="text"
-                                name="firstName"
-                                th:value ="${memberDetailDto.firstName}"
-                                id="first-name"
-                                class="form-control w-75"
-                                placeholder="Enter the first name"
-                                minlength="3"
-                                maxlength="30"
-                                required
-                        />
-                    </div>
+                <div class="form-group">
+                    <input type="hidden" name="id" th:value="${memberDetailDto.id}"/>
+                    <label for="first-name" class="font-weight-bold">
+                        First Name
+                    </label>
+                    <input
+                            type="text"
+                            name="firstName"
+                            th:value="${memberDetailDto.firstName}"
+                            id="first-name"
+                            class="form-control w-75"
+                            placeholder="Enter the first name"
+                            minlength="3"
+                            maxlength="30"
+                            required
+                    />
+                </div>
 
-                    <div class="form-group">
-                        <label for="last-name" class="font-weight-bold">
-                            Last Name
-                        </label>
-                        <input
-                                type="text"
-                                name="lastName"
-                                th:value="${memberDetailDto.lastName}"
-                                id="last-name"
-                                class="form-control w-75"
-                                placeholder="Enter the last name"
-                                minlength="3"
-                                maxlength="30"
-                                required
-                        />
-                    </div>
+                <div class="form-group">
+                    <label for="last-name" class="font-weight-bold">
+                        Last Name
+                    </label>
+                    <input
+                            type="text"
+                            name="lastName"
+                            th:value="${memberDetailDto.lastName}"
+                            id="last-name"
+                            class="form-control w-75"
+                            placeholder="Enter the last name"
+                            minlength="3"
+                            maxlength="30"
+                            required
+                    />
+                </div>
 
-                    <div class="form-group">
-                        <label for="email" class="font-weight-bold"> Email </label>
-                        <input
-                                type="text"
-                                name="email"
-                                th:value="${memberDetailDto.email}"
-                                id="email"
-                                class="form-control w-75"
-                                placeholder="Enter your phone number"
-                                minlength="9"
-                                maxlength="50"
-                                required
-                        />
-                    </div>
+                <div class="form-group">
+                    <label for="email" class="font-weight-bold"> Email </label>
+                    <input
+                            type="text"
+                            name="email"
+                            th:value="${memberDetailDto.email}"
+                            id="email"
+                            class="form-control w-75"
+                            placeholder="Enter your phone number"
+                            minlength="9"
+                            maxlength="50"
+                            required
+                    />
+                </div>
 
-                    <div class="form-group">
-                        <label for="phone" class="font-weight-bold"> Phone </label>
-                        <input
-                                type="text"
-                                name="phone"
-                                th:value="${memberDetailDto.phone}"
-                                id="phone"
-                                class="form-control w-75"
-                                placeholder="Enter your phone number"
-                                minlength="9"
-                                maxlength="13"
-                                required
-                        />
-                    </div>
+                <div class="form-group">
+                    <label for="phone" class="font-weight-bold"> Phone </label>
+                    <input
+                            type="text"
+                            name="phone"
+                            th:value="${memberDetailDto.phone}"
+                            id="phone"
+                            class="form-control w-75"
+                            placeholder="Enter your phone number"
+                            minlength="9"
+                            maxlength="13"
+                            required
+                    />
+                </div>
 
-                    <div class="form-group">
-                        <label for="description" class="font-weight-bold">
-                            Description
-                        </label>
-                        <br />
-                        <textarea
-                                th:text="${memberDetailDto.description}"
-                                name="description"
-                                id="description"
-                                class="w-75"
-                                cols="30"
-                                rows="10"
-                                maxlength="200"
-                        ></textarea>
+                <div class="form-group">
+                    <label for="description" class="font-weight-bold">
+                        Description
+                    </label>
+                    <br/>
+                    <textarea
+                            th:text="${memberDetailDto.description}"
+                            name="description"
+                            id="description"
+                            class="w-75"
+                            cols="30"
+                            rows="10"
+                            maxlength="200"
+                    ></textarea>
 
-                    </div>
+                </div>
 
-                    <div class="form-group">
-                        <button class="btn bg-white border-secondary" type="submit">
-                            Submit Button
-                        </button>
-                        <button class="btn bg-white border-secondary" type="reset">
-                            Reset Button
-                        </button>
-                    </div>
-                </form>
-            </div>
+                <div class="form-group">
+                    <button class="btn bg-white border-secondary" type="submit">
+                        Submit Button
+                    </button>
+                    <button class="btn bg-white border-secondary" type="reset">
+                        Reset Button
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 </body>
 </html>
